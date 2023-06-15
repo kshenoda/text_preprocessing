@@ -1,8 +1,9 @@
 from flask import Flask, request, jsonify
+import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-import nltk
+nltk.download('punkt')
 app = Flask(__name__)
 
 
@@ -56,8 +57,6 @@ def text_preprocessing():
     return jsonify({
         "Filtered Text: ": filtered_tokens,
     }), 200
-
-
 
 
 if __name__ == '__main__':
