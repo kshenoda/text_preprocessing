@@ -60,19 +60,10 @@ def text_preprocessing():
             temp = temp + words
             words = temp
 
-        # generate sign language animationsGit push origin main
-    animations = []
-    for word in filtered_tokens:
-        path = f"assets/{word}.mp4"
-        f = os.path.exists(path)
-        if not f:
-            for c in word:
-                animations.append(c)
-        else:
-            animations.append(word)
 
-    return jsonify({'animations': animations}), 200
-
+    return jsonify({
+        "Filtered Text: ": filtered_tokens,
+    }), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
