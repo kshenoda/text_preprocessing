@@ -60,7 +60,7 @@ def text_preprocessing():
             temp = temp + words
             words = temp
 
-        # generate sign language animations
+        # generate sign language animationsGit push origin main
     animations = []
     for word in filtered_tokens:
         path = f"assets/{word}.mp4"
